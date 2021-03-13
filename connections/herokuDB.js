@@ -2,7 +2,7 @@ process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0"
 
 const { Pool } = require('pg');
 const pool = new Pool({
-  connectionString: process.env.DATABASE_URL || 'postgres://tpnnjebckpwvbv:b65c2beaa02277e6b29cb6205283528e455e3c61fe3145f9eb649666634d5de8@ec2-52-71-231-37.compute-1.amazonaws.com:5432/d7b67qvjo3dssf?ssl=true',
+  connectionString: process.env.DATABASE_URL || 'postgres://vetulyqhkgwrjl:e5bf556bca465ce8a8358b1812122207e2498fc4cee9e7be5025a8b7b25c8a70@ec2-54-159-175-113.compute-1.amazonaws.com:5432/d7bc9a3a4e8sqn?ssl=true',
   ssl: {
     rejectUnauthorized: false
   }
