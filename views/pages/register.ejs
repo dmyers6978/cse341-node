@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <%- include ("../partials/header.ejs") %>
+</head>
+<body>
+  <%- include ("../partials/nav.ejs") %>
+<h1>Register</h1>
+<% if(typeof message !== 'undefined'){ %>
+    <p><%= message %></p>
+    <% } %>
+<form method='post' action='/addUser'>
+<label for='fName'>First Name: <input name='fName' id='fName' type='text' <% if(typeof fName !== 'undefined'){ %>
+    value=<%= fName %> 
+    <% } %>></label><br>
+<label for='lName'>Last Name: <input name='lName' id='lName' type='text' <% if(typeof lName !== 'undefined'){ %>
+    value=<%= lName %> 
+    <% } %>></label><br>
+<label for='uName'>User Name: <input name='uName' id='uName' type='text' <% if(typeof uName !== 'undefined'){ %>
+    value=<%= uName %> 
+    <% } %>></label><br>
+<input type='submit' value='Register'>
+</form>
+</body>
+</html>
+<% delete message; %>
