@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="/styles/accounts.css">
+</head>
+<body>
+    <div id="loginBox">
+<h1>Login</h1>
+<% if(typeof message !== 'undefined'){ %>
+    <p><%= message %></p>
+    <% } %>
+<form method='post' action='/loginReq'>
+<label for='uName'>User Name: <input name='uName' id='uName' type='text' <% if(typeof uName !== 'undefined'){ %>
+    value=<%= uName %> 
+    <% } %>></label><br>
+<input type='submit' value='Login'>
+</form>
+<a href='/register'>Need an account?</a>
+</div>
+</body>
+</html>
+<% delete message; %>

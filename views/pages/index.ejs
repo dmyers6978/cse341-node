@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <%- include ("../partials/header.ejs") %>
+  <%- include ("../partials/head.ejs") %>
 </head>
 <body>
+  <%- include("../partials/header.ejs")%>
   <%- include ("../partials/nav.ejs") %>
+  <main>
   <% if(typeof message !== 'undefined' && message){ %>
-    <p><%= message %></p>
+    <p><%= decodeURIComponent(message) %></p>
     <% } %>
   <% if(results.length > 1){ %>
     <table><thead><tr><th>Recipe Name</th><th>Recipe Description</th><th>Owner</th><th>Date Added</th></tr></thead><tbody>
@@ -17,6 +19,7 @@
 <% } else{ %>
   <p>Nothing to show here.</p>
   <% }; %>
+</main>
 </body>
 </html>
 <% delete message; %>
