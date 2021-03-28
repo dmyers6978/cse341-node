@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 var dbConnect = require('../connections/herokuDB');
-var sql = 'SELECT * FROM log JOIN recipes USING(recipeid) JOIN users USING(userid)';
+var sql = 'SELECT *, to_char(datetime, \'Mon DD, YYYY HH:MI AM\') AS datetime FROM log JOIN recipes USING(recipeid) JOIN users USING(userid) ORDER BY log.datetime DESC LIMIT 10';
 
 router.get('/', async (req, res) => {
     try {

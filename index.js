@@ -8,6 +8,8 @@ var mainRouter = require('./routes/main');
 var addUser = require('./routes/addUser');
 var loginRouter = require('./routes/login');
 var logoutRouter = require('./routes/logout');
+var insertRecipe = require('./routes/recipe');
+var recipeDetails = require('./routes/recipeDetails');
 
 express()
   .use(express.static(path.join(__dirname, 'public')))
@@ -18,7 +20,11 @@ express()
   .get('/', mainRouter)
   .get('/register', (req, res) => {res.render('pages/register')})
   .get('/login', (req, res) => {res.render('pages/login')})
-  .use('/addUser', addUser)
-  .use('/loginReq', loginRouter)
-  .use('/logout', logoutRouter)
+  .use('/insertRecipe', insertRecipe)
+  .use('/recipeDetails', recipeDetails)
+  .get('/addRecipe', (req, res) => {if(typeof req.cookies.loggedin == 'undefined'){res.redirect('/login');} else{ const results = {'userData': (req.cookies.userData), 'loggedin': (req.cookies.loggedin)};
+  res.render('pages/addRecipe', results );}})
+  .post('/addUser', addUser)
+  .post('/loginReq', loginRouter)
+  .get('/logout', logoutRouter)
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))

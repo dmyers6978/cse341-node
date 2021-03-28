@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <%- include ("../partials/head.ejs") %>
+</head>
+<body>
+  <%- include("../partials/header.ejs")%>
+  <%- include ("../partials/nav.ejs") %>
+  <main>
+  <% if(results.length > 0){ %>
+    <% results.forEach(function(r) { %>
+    <h1><%= r.recipename %></h1>
+    <div id="desc"><%= r.recipedesc %></div>
+<% }); %>
+<% } else{ %>
+  <p>Nothing to show here.</p>
+  <% }; %>
+</main>
+</body>
+<script>
+window.onload = function(){
+document.getElementById("desc").innerHTML.replaceAll('<br>', document.createElement("BR"));
+}
+</script>
+</html>
+<% delete message; %>
