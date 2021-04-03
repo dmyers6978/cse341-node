@@ -14,7 +14,7 @@
   <% if(results.length > 0){ %>
     <table><thead><tr><th>Recipe Name</th><th>Recipe</th><th>Owner</th><th>Date Added</th></tr></thead><tbody>
     <% results.forEach(function(r) { %>
-    <tr><td><a href='/recipeDetails?recipeId=<%=r.recipeid%>'><%= r.recipename %></a></td><td><a href='/recipeDetails?recipeId=<%=r.recipeid%>'><%= r.recipedesc.substring(0,30).replaceAll('<br>', ' ') + "..." %></a></td><td><%= r.fname %> <%= r.lname %></td><td><%= r.datetime %></td></tr>
+    <tr><td><a href='/recipeDetails?recipeId=<%= r.recipeid %>'><%= r.recipename %></a></td><td><a href='/recipeDetails?recipeId=<%= r.recipeid %>'><%= r.recipedesc.substring(0,30).replaceAll('<br>', ' ') + "..." %></a></td><td><%= r.fname %> <%= r.lname %></td><td><%= r.datetime %></td></tr>
 <% }); %>
 </tbody></table>
 <% } else{ %>
