@@ -10,17 +10,15 @@
   <% if(results.length > 0){ %>
     <% results.forEach(function(r) { %>
     <h1><%= r.recipename %></h1>
-    <div id="desc"><%= r.recipedesc %></div>
+    <div id="desc"><% r.recipedesc.split('<br>').forEach(line => { %>
+    <p><%= line %></p>
+    <% )}; %>
+    </div>
 <% }); %>
 <% } else{ %>
   <p>Nothing to show here.</p>
   <% }; %>
 </main>
 </body>
-<script>
-window.onload = function(){
-document.getElementById("desc").innerHTML.replaceAll('<br>', document.createElement("BR"));
-}
-</script>
 </html>
 <% delete message; %>
