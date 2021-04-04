@@ -9,7 +9,7 @@ CREATE TABLE recipes (
 recipeid SERIAL NOT NULL PRIMARY KEY,
 userid INT NOT NULL REFERENCES users(userid),
 recipename VARCHAR(150) NOT NULL,
-recipedesc VARCHAR(1500) NOT NULL
+recipedesc VARCHAR(10485760) NOT NULL
 );
 
 CREATE TABLE log (

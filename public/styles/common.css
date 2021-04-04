@@ -1,20 +1,25 @@
 :root{
-    --main1: 79,79,79;
-    --main2: 100,100,100;
-    --main3: ;
-    --lightText: 255,255,255;
+    --main1: 0,20,45;
+    --main2: 30,60,73;
+    --main3: 255,193,157;
+    --lightText: 73,143,176;
     --darkText: 0,0,0;
+    --colorText: 255,193,157;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
 
 *{
     margin: 10px auto;
     box-sizing: border-box;
     text-align: center;
-    color: var(--darkText);
+    color: rgb(var(--darkText));
+    font-family: 'Open Sans', sans-serif;
 }
 
 body, html{
     margin: 0 auto;
+    background: rgb(255,255,255);
 }
 
 #loginBox{
@@ -27,8 +32,8 @@ input{
 
 main{
     margin-left: 10vw;
-    padding-right: 10vw;
-    margin-top: 150px;
+    /* padding-right: 10vw; */
+    margin-top: 160px;
     width: 90vw;
 }
 
@@ -51,4 +56,76 @@ header{
     left: 0;
     width: 100vw;
     margin: 0 auto;
+}
+
+header *{
+    color: rgb(var(--lightText));
+}
+
+nav ul{
+    padding: 15px;
+    text-align: left;
+}
+
+nav ul li{
+    list-style-type: none;
+    text-align: left;
+}
+
+nav ul li a{
+    text-decoration: none;
+    text-align: left;
+    color: rgb(var(--lightText));
+    transition-duration: .5s;
+}
+
+nav ul li:hover a:not(.active){
+    color: rgb(var(--colorText));
+    transition-duration: .5s;
+    padding-left: 10px;
+}
+
+.active{
+    color: rgb(var(--colorText));
+    padding-left: 10px;
+
+}
+
+textarea[name="description"]{
+    width: 90%;
+    height: 40vh;
+    border-radius: 3px;
+    border: 2px solid black;
+}
+
+input{
+    border-radius: 3px;
+    border: 2px solid black;
+}
+
+input[type="submit"], button{
+    padding: 5px;
+    background-color: rgb(var(--colorText));
+    border: none;
+    color: rgb(var(--main2));
+    font-weight: bolder;
+    font-size: 1.0em;
+}
+
+table{
+    border-collapse: collapse;
+    text-align: center;
+    width: 90%
+}
+
+thead{
+    background-color: rgb(var(--colorText))
+}
+
+tbody tr:nth-child(even){
+    background-color: rgba(var(--colorText),.3)
+}
+
+tbody tr:nth-child(odd){
+    background-color: rgb(245,245,245)
 }
