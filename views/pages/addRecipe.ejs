@@ -8,8 +8,8 @@
   <%- include ("../partials/nav.ejs") %>
   <main>
     <form method='get' action='/insertRecipe'>
-    <label for="name">Recipe Name:<br><br><input type="text" name="name" id="name"></label><br><br>
-    <label for="description">Recipe:<br><br><textarea name='description'></textarea></label><br><br>
+    <label for="name">Recipe Name:<br><br><input type="text" name="name" id="name" required></label><br><br>
+    <label for="description">Recipe:<br><br><textarea name='description' required></textarea></label><br><br>
     <input type="hidden" name="userId" value="<%= userData.userid %>">
     <input type="submit" value="Add Recipe">
     </form>
